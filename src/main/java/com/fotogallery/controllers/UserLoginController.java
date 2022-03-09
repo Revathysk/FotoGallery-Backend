@@ -27,7 +27,7 @@ public class UserLoginController {
 		return userloginRepo.findAll();
 	}
 	
-	//  Find user by user name	
+	//  Read/Find by user name	
 	@GetMapping("user/{username}")
 	public List<UserLogin> getUserByUserName(@PathVariable String username){
 	List<UserLogin> finduser = userloginRepo.findByUsername(username);
@@ -36,7 +36,8 @@ public class UserLoginController {
 	}
 	 return userloginRepo.findByUsername(username);
 	}
-	 
+
+	// Add new user	
 	@PostMapping("adduser")
 	public UserLogin addnewUser(@RequestBody UserLogin newuser){
 		return 	userloginRepo.save(newuser); 
@@ -52,8 +53,7 @@ public class UserLoginController {
 //	 return userloginRepo.findByUsername(username);
 //	}
 
-	// Add new user		
-
+	
 	
 }
 
